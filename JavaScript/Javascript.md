@@ -1136,6 +1136,97 @@ Here are the main non-primitive types in JavaScript:
    };
    console.log(person.firstName); // Outputs: "John"
    ```
+   Certainly! Let's dive deeper into object methods and provide more examples for a comprehensive understanding.
+
+      ### **Object Methods in JavaScript:**
+
+      JavaScript objects come with built-in methods that can be used to manipulate and interact with their properties and values. Here are some additional commonly used object methods:
+
+      1. **`Object.keys(obj)`**:
+         The `Object.keys()` method returns an array containing all enumerable property names of the given object.
+      
+         ```javascript
+         const person = {
+           firstName: "John",
+           lastName: "Doe",
+           age: 30
+         };
+         const keys = Object.keys(person);
+         console.log(keys); // Outputs: ["firstName", "lastName", "age"]
+         ```
+      
+      2. **`Object.values(obj)`**:
+         The `Object.values()` method returns an array containing all enumerable property values of the given object.
+      
+         ```javascript
+         const person = {
+           firstName: "John",
+           lastName: "Doe",
+           age: 30
+         };
+         const values = Object.values(person);
+         console.log(values); // Outputs: ["John", "Doe", 30]
+         ```
+      
+      3. **`Object.entries(obj)`**:
+         The `Object.entries()` method returns an array of arrays, where each inner array contains an enumerable property's key and value.
+      
+         ```javascript
+         const person = {
+           firstName: "John",
+           lastName: "Doe",
+           age: 30
+         };
+         const entries = Object.entries(person);
+         console.log(entries);
+         // Outputs: [["firstName", "John"], ["lastName", "Doe"], ["age", 30]]
+         ```
+      
+      4. **Property Access and Assignment**:
+         You can access and assign object properties using dot notation or bracket notation.
+      
+         ```javascript
+         const person = {
+           firstName: "John",
+           lastName: "Doe"
+         };
+         
+         // Property Access
+         console.log(person.firstName);    // Outputs: "John"
+         console.log(person["lastName"]);  // Outputs: "Doe"
+         
+         // Property Assignment
+         person.age = 30;
+         person["address"] = "123 Main St";
+         console.log(person); // Outputs: {firstName: "John", lastName: "Doe", age: 30, address: "123 Main St"}
+         ```
+      
+      5. **`Object.assign(target, ...sources)`**:
+         The `Object.assign()` method is used to copy the values of all enumerable properties from one or more source objects to a target object. It returns the modified target object.
+      
+         ```javascript
+         const target = { a: 1 };
+         const source = { b: 2, c: 3 };
+         const result = Object.assign(target, source);
+         console.log(result); // Outputs: { a: 1, b: 2, c: 3 }
+         ```
+      
+      6. **Cloning an Object**:
+         You can use `Object.assign({}, originalObject)` to create a shallow clone of an object. Alternatively, you can use the spread operator (`{...originalObject}`) to achieve the same result.
+      
+         ```javascript
+         const original = { a: 1, b: 2 };
+         
+         // Shallow Clone using Object.assign()
+         const clone1 = Object.assign({}, original);
+         
+         // Shallow Clone using Spread Operator
+         const clone2 = { ...original };
+         
+         console.log(clone1); // Outputs: { a: 1, b: 2 }
+         console.log(clone2); // Outputs: { a: 1, b: 2 }
+         ```
+
 
 2. **Arrays:**
    Arrays are ordered collections of values, usually of the same type but not necessarily. They allow you to store multiple items in a single variable. Arrays have built-in methods for adding, removing, and manipulating elements. They are often used for lists and sequences of data.
