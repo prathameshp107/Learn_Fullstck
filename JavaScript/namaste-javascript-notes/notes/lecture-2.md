@@ -4,7 +4,15 @@
 
 * The execution context is created in two phases.
   * Memory creation phase - JS will allocate memory to variables and functions.
+    ### 1. Memory Creation Phase:
+
+    The memory creation phase involves allocating memory for variables and functions within the current scope. During this phase:
+    - For variables (`var n`), memory is allocated and initialized with the value `undefined`.
+    - For functions (`function square(num)`), memory is allocated to store the entire function code.
   * Code execution phase
+    ### 2. Code Execution Phase:
+
+    The code execution phase involves actually executing the code line by line. When it comes to variable assignments (`var n = 2`), the assigned values are now stored in the allocated memory locations. Since the functions have already been initialized during the memory creation phase, there's no need to reinitialize them.
 
 * Let's consider the below example and its code execution steps:
 ```js

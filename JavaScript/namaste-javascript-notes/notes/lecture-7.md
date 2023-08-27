@@ -3,53 +3,73 @@
 * **Scope** in Javascript is directly related to **Lexical Environment**.
 
 * Let's observe the below examples:
-```js
-// CASE 1
-function a() {
-    console.log(b); // 10
-    // Instead of printing undefined it prints 10, So somehow this a function could access the variable b outside the function scope. 
-}
-var b = 10;
-a();
-```
-
-```js
-// CASE 2
-function a() {
-    c();
-    function c() {
+    ### Case 1:
+    
+    - The function `a` can access the variable `b` from the global scope because it is within the scope chain.
+    - This demonstrates the idea that nested functions have access to variables from their containing scopes.
+    ```js
+    // CASE 1
+    function a() {
         console.log(b); // 10
+        // Instead of printing undefined it prints 10, So somehow this a function could access the variable b outside the function scope. 
     }
-}
-var b = 10;
-a();
-```
-
-```js
-// CASE 3
-function a() {
-    c();
-    function c() {
-        var b = 100;
-        console.log(b); // 100
-    }
-}
-var b = 10;
-a();
-```
-
-```js
-// CASE 4
-function a() {
     var b = 10;
-    c();
-    function c() {
-        console.log(b); // 10
+    a();
+    ```
+
+    ### Case 2:
+
+    - The function `c` is called within the function `a`, which is within the global scope.
+    - Even though `c` is defined within `a`, it still has access to the global variable `b`.
+    - This highlights how functions maintain access to variables from their parent scopes in the lexical environment.
+
+    ```js
+    // CASE 2
+    function a() {
+        c();
+        function c() {
+            console.log(b); // 10
+        }
     }
-}
-a();
-console.log(b); // Error, Not Defined
-```
+    var b = 10;
+    a();
+    ```
+
+    ### Case 3:
+
+    - Inside function `c`, a local variable `b` is defined with the value `100`.
+    - This local variable takes precedence over the global variable `b` within the scope of `c`.
+    ```js
+    // CASE 3
+    function a() {
+        c();
+        function c() {
+            var b = 100;
+            console.log(b); // 100
+        }
+    }
+    var b = 10;
+    a();
+    ```
+    ### Case 4:
+
+    - Within function `a`, a local variable `b` is defined with the value `10`.
+    - When `c` is called, it can access the local variable `b` within the scope of `a`.
+
+    - However, outside of function `a`, the global execution context cannot access the local variable `b` defined within `a`. This demonstrates that the global scope cannot access variables defined in local scopes.
+
+    ```js
+    // CASE 4
+    function a() {
+        var b = 10;
+        c();
+        function c() {
+            console.log(b); // 10
+        }
+    }
+    a();
+    console.log(b); // Error, Not Defined
+    ```
 
 * Let's try to understand the output in each of the cases above.
   * In **case 1**: function a is able to access variable b from Global scope.

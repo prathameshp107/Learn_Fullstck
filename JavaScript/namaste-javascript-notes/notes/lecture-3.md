@@ -34,6 +34,7 @@ var getName = function () {
 }
 // The code won't execute as the first line itself throws an TypeError.
 ```
+> for above example getname is treated as variable and in excution context it stores undefined thats why it is giving undefined
 
 <hr>
 

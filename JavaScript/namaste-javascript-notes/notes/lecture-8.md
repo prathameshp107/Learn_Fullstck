@@ -11,7 +11,10 @@
     console.log(window.b); // 15
     ```
   It looks like let isn't hoisted, **but it is**, let's understand
-  * Both a and b are actually initialized as *undefined* in hoisting stage. But var **b** is inside the storage space of GLOBAL, and **a** is in a separate memory object called script, where it can be accessed only after assigning some value to it first ie. one can access 'a' only if it is assigned. Thus, it throws error.
+  * Both a and b are actually initialized as *undefined* in hoisting stage. But var **b** is inside the storage space of GLOBAL, and **a** is in a separate memory object called **script**, where it can be accessed only after assigning some value to it first ie. one can access 'a' only if it is assigned. Thus, it throws error.
+
+
+![Execution Context Phase 1](../assets/script.png "Execution Context")
 
 <br>
 

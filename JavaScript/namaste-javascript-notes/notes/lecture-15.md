@@ -81,7 +81,7 @@ fetch("https://api.netflix.com").then(function cbF() {
 }); // take 2 seconds to bring response
 // millions lines of code
 console.log("End"); 
-
+```
 Code Explaination:
 * Same steps for everything before fetch() in above code.
 * fetch registers cbF into webapi environment along with existing cbT.
@@ -92,7 +92,7 @@ Code Explaination:
 * Microtask Queue is exactly same as Callback Queue, but it has higher priority. Functions in Microtask Queue are executed earlier than Callback Queue.
 * In console, first Start and End are printed in console. First cbF goes in callstack and "CB Netflix" is printed. cbF popped from callstack. Next cbT is removed from callback Queue, put in Call Stack, "CB Timeout" is printed, and cbT removed from callstack.
 * See below Image for more understanding
-```
+
 ![Event Loop 6 Demo](../assets/eventloop6.jpg)
 Microtask Priority Visualization
 ![Event Loop 7 Demo](../assets/microtask.gif)

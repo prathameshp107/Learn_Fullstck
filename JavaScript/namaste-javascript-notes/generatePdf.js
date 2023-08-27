@@ -1,3 +1,3 @@
 const prettyMdPdf = require("pretty-markdown-pdf")
 
-prettyMdPdf.convertMd({ markdownFilePath: "./notes/lectures.md", outputFilePath: "./dist/namaste-javascript-notes.pdf" })
+prettyMdPdf.convertMd({ markdownFilePath: "../../../namaste-javascript-notes/notes/lecture-1.md", outputFilePath: "./dist/jss-notes.pdf" })
